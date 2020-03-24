@@ -1,0 +1,11 @@
+{
+    "name": "amir/backend-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hassan Azimi",
+            "email": "hassanazimi@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
