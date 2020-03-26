@@ -1,3 +1,9 @@
+# INstallation
+- In the root of the application please run `composer install`.
+- Run `php script.php` to see the result, however it will take a long time to see the result in the console. I could have chuncked or paginated the result but this wasn't mentioned in the description.
+- I have pulled [JSON Machine](https://github.com/halaxa/json-machine) package which is efficient drop-in replacement for inefficient iteration of big JSONs files or streams because the JSON is reprentation of API. There are lots of packages out there for memoly limit solutions.
+- It took me an hour and half, not to do this but to research how to do it.
+
 # Waldo Backend PHP Developer Test
 
 These scripts present a problem related to sorting large datasets.
