@@ -26,7 +26,7 @@ class Sort
 		 * To view the results:
 		 * console needs to be stopped half way because
 		 * console also uses memory and it will overwrites
-		 * the older logs. I have used the bubble sort for this
+		 * the older logs. I have used the DIY sort for this
 		 * and increased the memory as you did not mention not to modify it.
 		 */
 		$array = JsonMachine::fromFile($this->fileName);
