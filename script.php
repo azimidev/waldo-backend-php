@@ -1,6 +1,6 @@
 <?php
 
-ini_set('memory_limit', '400M');
+ini_set('memory_limit', '250M');
 ini_set('max_execution_time', 1200);
 set_time_limit(1200);
 

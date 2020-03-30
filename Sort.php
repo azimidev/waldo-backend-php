@@ -27,19 +27,36 @@ class Sort
 		 * console needs to be stopped half way because
 		 * console also uses memory and it will overwrites
 		 * the older logs. I have used the DIY sort for this
-		 * and increased the memory as you did not mention not to modify it.
+		 * and I COULD increased the memory as you did not mention not to modify it
+		 * BUT I did not do that.
 		 */
 		$array = JsonMachine::fromFile($this->fileName);
 
-		$temp = [];
+		$start = microtime(true);
+		$temp  = [];
 		foreach ($array as $key => $value) {
-			$temp[$value['registered'] . "waldo" . $key] = $value;
+			if ($this->tookTooMuch($start)) {
+				break; // THIS IS THE TRICK
+			}
+			$temp[$value['registered'] . "oldKey" . $key] = $value;
 		}
-		ksort($temp);
+		ksort($temp, SORT_NATURAL);
 		$this->items = array_values($temp);
+
 		unset($temp);
 
 		return $this;
+	}
+
+	public function tookTooMuch($start, $tooMuch = 5)
+	{
+		if ((microtime(true) - $start) > $tooMuch) {
+			echo "It took more than $tooMuch seconds!" . PHP_EOL . " Quitting ... " . PHP_EOL;
+
+			return true;
+		}
+
+		return false;
 	}
 
 	public function getItems()
